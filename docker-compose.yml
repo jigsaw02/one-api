@@ -33,6 +33,7 @@ services:
     image: "${REGISTRY:-docker.io}/redis:latest"
     container_name: redis
     restart: always
+    command: --requirepass KcSERvnYEds3kh6
     ports:
       - "46379:6379"
 
