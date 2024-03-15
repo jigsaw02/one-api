@@ -12,7 +12,7 @@ services:
       - ./data/oneapi:/data
       - ./logs:/app/logs
     environment:
-      - SQL_DSN=root:KcSERvnYEds3kh6@172.31.40.199:3306/one-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
+      - SQL_DSN=oneapi:KcSERvnYEds3kh6@172.31.40.199:3306/one-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
       - REDIS_CONN_STRING=redis://redis
       - SESSION_SECRET=random_string  # 修改为随机字符串
       - TZ=Asia/Shanghai
@@ -46,6 +46,6 @@ services:
     environment:
       TZ: Asia/Shanghai   # 设置时区
       MYSQL_ROOT_PASSWORD: 'KcSERvnYEds3kh6' # 设置 root 用户的密码
-      MYSQL_USER: root   # 创建专用用户
+      MYSQL_USER: oneapi   # 创建专用用户
       MYSQL_PASSWORD: 'KcSERvnYEds3kh6'    # 设置专用用户密码
       MYSQL_DATABASE: one-api   # 自动创建数据库
