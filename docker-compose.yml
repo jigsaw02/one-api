@@ -14,11 +14,11 @@ services:
     environment:
       - SQL_DSN=oneapi:KcSERvnYEds3kh6@tcp(db:3306)/one-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
 #      - SQL_DSN=oneapi:123456@tcp(db:3306)/one-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
-      - REDIS_CONN_STRING=redis://redis
+      - REDIS_CONN_STRING=redis://default:KcSERvnYEds3kh6@redis:6379
       - SESSION_SECRET=3J7z4Q8v9T6p2s5w1xR9yP0zL2qB4a6c8e0dS2fG  # 修改为随机字符串
       - TZ=Asia/Shanghai
 #      - NODE_TYPE=slave  # 多机部署时从节点取消注释该行
-#      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
+      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
 #      - FRONTEND_BASE_URL=https://openai.justsong.cn  # 多机部署时从节点取消注释该行
     depends_on:
       - redis
