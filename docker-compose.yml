@@ -19,6 +19,8 @@ services:
       - TZ=Asia/Shanghai
 #      - NODE_TYPE=slave  # 多机部署时从节点取消注释该行
       - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
+      - THEME=berry
+      
 #      - FRONTEND_BASE_URL=https://openai.justsong.cn  # 多机部署时从节点取消注释该行
     depends_on:
       - redis
@@ -51,4 +53,4 @@ services:
       MYSQL_USER: oneapi   # 创建专用用户
       MYSQL_PASSWORD: 'KcSERvnYEds3kh6'    # 设置专用用户密码
       MYSQL_DATABASE: one-api   # 自动创建数据库
-      THEME: berry
+    
